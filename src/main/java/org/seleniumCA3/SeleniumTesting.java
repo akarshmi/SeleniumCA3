@@ -19,11 +19,10 @@ public class SeleniumTesting {
         new Select(driver.findElement(By.id("DropDownList1")))
                 .selectByVisibleText("HeadOffice");
 
-        // 2) Username entry (triggers refresh)
+        // 2) Username entry 
         WebElement userId = driver.findElement(By.id("txtU"));
         userId.sendKeys("Your_UMS_ID");
 
-        // ---- FINAL FIX: multiple-refresh-proof password handling ----
         By passwordLocator = By.id("TxtpwdAutoId_8767");
 
         int retries = 0;
