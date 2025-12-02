@@ -21,7 +21,7 @@ public class SeleniumTesting {
 
         // 2) Username entry (triggers refresh)
         WebElement userId = driver.findElement(By.id("txtU"));
-        userId.sendKeys("UserName");
+        userId.sendKeys("Your_UMS_ID");
 
         // ---- FINAL FIX: multiple-refresh-proof password handling ----
         By passwordLocator = By.id("TxtpwdAutoId_8767");
@@ -31,7 +31,7 @@ public class SeleniumTesting {
             try {
                 WebElement password = wait.until(ExpectedConditions.elementToBeClickable(passwordLocator));
                 password.clear();
-                password.sendKeys("Password");
+                password.sendKeys("Your_UMS_Password");
                 break;
             } catch (StaleElementReferenceException e) {
                 System.out.println("Password field refreshed again — retrying...");
